@@ -1,41 +1,52 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Merge both [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/merge-both/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/merge-both)
 
-My awesome module.
+Merge with support for objects and arrays.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/merge-both.png)](https://npmjs.com/package/merge-both)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install merge-both
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const mergeBoth = require("merge-both");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+mergeBoth(
+    {
+        a: ["a", "b"],
+        b: { b: "c" },
+        c: "e"
+    },
+    {
+        a: ["c", "d"],
+        b: { b: "f", c: "d" }
+    }
+);
+
+// Returned object
+{
+    a: ["a", "b", "c", "d"],
+    b: { b: "f", c: "d" },
+    c: "e",
+}
 ```
 
 ## API
 
-### theModule(input, options?)
+### mergeBoth(obj, ...source)
 
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
+#### obj
 
 Type: `object`
 
-##### postfix
+The main object to merge.
 
-Type: `string`\
-Default: `rainbows`
+#### source
 
-Lorem ipsum.
+Type: `object`
+
+The other objects to merge.

@@ -1,14 +1,31 @@
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * Merge with support for objects and arrays.
+ * @param obj The main object to merge.
+ * @param source The other objects to merge.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const mergeBoth = require("merge-both");
+ *
+ * mergeBoth(
+ *     {
+ *         a: ["a", "b"],
+ *         b: { b: "c" },
+ *         c: "e"
+ *     },
+ *     {
+ *         a: ["c", "d"],
+ *         b: { b: "f", c: "d" }
+ *     }
+ * );
+ *
+ * // Returned object
+ * {
+ *     a: ["a", "b", "c", "d"],
+ *     b: { b: "f", c: "d" },
+ *     c: "e",
+ * }
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function mergeBoth(obj: object, ...source: object[]): object;
 
-export = theModule;
+export = mergeBoth;

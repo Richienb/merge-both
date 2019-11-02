@@ -1,7 +1,7 @@
 "use strict"
 
-module.exports = (input, { postfix = "rainbows" } = {}) => {
-    if (typeof input !== "string") throw new TypeError(`Expected a string, got ${typeof input}`)
+const _ = require("lodash")
 
-    return `${input} & ${postfix}`
-}
+module.exports = (obj, ...sources) => _.mergeWith(obj, ...sources, (objValue, srcValue) => {
+    if (_.isArray(objValue)) return objValue.concat(srcValue)
+})
