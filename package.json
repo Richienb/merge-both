@@ -1,7 +1,7 @@
 {
     "name": "merge-both",
     "version": "1.0.0",
-    "description": "My awesome module.",
+    "description": "Merge with support for objects and arrays.",
     "repository": "https://github.com/Richienb/merge-both.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
     "license": "MIT",
